@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using WebApiTest.BAL.Implementations;
 using WebApiTest.BAL.Interfaces;
@@ -12,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options =>
 {
-    options.Filters.Add(typeof(ApiKeyActionFilter));
+    //options.Filters.Add(typeof(ApiKeyActionFilter));
 });
 
 builder.Services.AddLogging(options =>
@@ -34,7 +33,10 @@ builder.Services.AddSwaggerGen(options =>
 
 //Dependency injection
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IPostServices, PostServices>();
+
 builder.Services.AddScoped<IUserDA, UserSimpleDAL>();
+builder.Services.AddScoped<IPostDA, PostSimpleDAL>();
 
 var app = builder.Build();
 

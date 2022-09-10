@@ -1,5 +1,4 @@
-﻿using WebApiTest.DTO.Users;
-using WebApiTest.Entities.Users;
+﻿using WebApiTest.Entities.Users;
 
 namespace WebApiTest.DAL.Interfaces
 {
